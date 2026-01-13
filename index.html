@@ -1,208 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lilicia Bakehouse</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fff8f2;color:#333}
-:root{
- --accent:#c76b39;
- --shadow:0 6px 18px rgba(0,0,0,.1);
+body{
+  font-family:Arial,sans-serif;
+  background:#fff8f2;
+  color:#333;
 }
-header{background:#fff;padding:12px;box-shadow:var(--shadow)}
-.container{max-width:1100px;margin:auto;padding:16px}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo-box{display:flex;align-items:center;gap:10px}
-.logo-box img{width:50px;height:50px;border-radius:10px}
-.logo-text{font-weight:bold;color:var(--accent)}
-.store-phone{font-size:13px;color:#555}
-nav a{margin-left:16px;font-weight:bold;text-decoration:none;color:#333}
+:root{--accent:#e1702a}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
-.card{background:#fff;padding:12px;border-radius:12px;box-shadow:var(--shadow)}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-.price{color:var(--accent);font-weight:bold}
+/* HEADER */
+header{
+  background:#fde6d8;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:600;
+  color:#333;
+}
 
-.cart,form{background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-top:20px}
-.cart-item{display:flex;justify-content:space-between;border-bottom:1px dashed #ddd;padding:6px 0}
+/* LAYOUT */
+.container{max-width:1100px;margin:auto;padding:20px}
+.section{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  margin-top:30px;
+}
 
-input,textarea,select{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #ddd}
-button{padding:10px;border:none;border-radius:8px;cursor:pointer}
-.submit{background:var(--accent);color:#fff;font-weight:bold}
+/* BANNER */
+.banner{text-align:center}
+.banner h1{color:var(--accent);margin-bottom:8px}
 
-footer{text-align:center;margin:30px 0;font-size:13px}
+/* BUTTON */
+.btn{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* PRODUK */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* CARA PESAN */
+.step{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
+}
+.step span{
+  background:var(--accent);
+  color:#fff;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* FORM */
+input,textarea{
+  width:100%;
+  padding:8px;
+  margin:6px 0 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* TESTIMONI */
+.testimoni{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+.testi-card{
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+.testi-card b{color:var(--accent)}
+
+/* ALAMAT TOKO */
+#alamat-toko p{
+  margin-bottom:10px;
+  line-height:1.6;
+}
+
+footer{
+  text-align:center;
+  padding:15px;
+  color:#888;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="container nav">
-<div class="logo-box">
-<img src="img/Logo.jpg" alt="Lilicia Bakehouse">
-<div>
-<div class="logo-text">Lilicia Bakehouse</div>
-<div class="store-phone">📞 0813-6817-8228</div>
-</div>
-</div>
-<nav>
-<a href="#produk">Produk</a>
-<a href="#checkout">Checkout</a>
-</nav>
-</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="img/Logo.jpg" height="45">
+    <div>
+      <b style="font-size:18px">Lilicia Bakehouse</b><br>
+      <span style="font-size:13px;color:#777">
+        Roti & kue tanpa bahan pengawet tambahan • Pesan online
+      </span>
+    </div>
+  </div>
+  <nav>
+    <a href="#produk">Produk</a>
+    <a href="#pesan">Cara Pesan</a>
+    <a href="#checkout">Checkout</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#alamat-toko">Alamat Toko</a>
+  </nav>
 </header>
 
 <div class="container">
 
-<h2 id="produk">Produk Kami</h2>
-<div class="grid">
-
-<div class="card">
-<img src="img/RotiManis.jpg">
-<h3>Roti Manis</h3>
-<p>Isi cokelat & keju</p>
-<div class="price">Rp15.000</div>
-<button onclick="addToCart('Roti Manis',15000)">Tambah</button>
+<!-- BANNER -->
+<div class="section banner">
+  <h1>Lihat & Pesan Roti Favorit Anda</h1>
+  <p>Fresh setiap hari, tanpa pengawet</p>
 </div>
 
-<div class="card">
-<img src="img/BoluCoklat.jpg">
-<h3>Bolu Cokelat</h3>
-<p>Loyang 20cm</p>
-<div class="price">Rp38.000</div>
-<button onclick="addToCart('Bolu Cokelat',38000)">Tambah</button>
+<!-- PRODUK -->
+<div class="section" id="produk">
+  <h2>Produk Populer</h2>
+  <div class="products">
+    <div class="card">
+      <img src="img/RotiManis.jpg">
+      <h4>Roti Manis</h4>
+      <p>Rp15.000</p>
+      <button class="btn" onclick="addCart('Roti Manis',1500)">Tambah</button>
+    </div>
+    <div class="card">
+      <img src="img/RotiKeju.jpg">
+      <h4>Roti Keju</h4>
+      <p>Rp45.000</p>
+      <button class="btn" onclick="addCart('Roti Keju',45000)">Tambah</button>
+    </div>
+    <div class="card">
+      <img src="img/BoluCoklat.jpg">
+      <h4>Bolu Coklat</h4>
+      <p>Rp54.000</p>
+      <button class="btn" onclick="addCart('Bolu Coklat',54000)">Tambah</button>
+    </div>
+    <div class="card">
+      <img src="img/cookies.jpg">
+      <h4>Cookies</h4>
+      <p>Rp30.000</p>
+      <button class="btn" onclick="addCart('Cookies',30000)">Tambah</button>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<img src="img/RotiKeju.jpg">
-<h3>Roti Keju</h3>
-<p>Keju mozzarella</p>
-<div class="price">Rp45.000</div>
-<button onclick="addToCart('Roti Keju',45000)">Tambah</button>
+<!-- CARA PESAN -->
+<div class="section" id="pesan">
+  <h2>Cara Pemesanan</h2>
+  <div class="step"><span>1</span>Pilih produk</div>
+  <div class="step"><span>2</span>Cek keranjang</div>
+  <div class="step"><span>3</span>Isi data checkout</div>
+  <div class="step"><span>4</span>Checkout via WhatsApp</div>
+  <div class="step"><span>5</span>Pesanan diproses admin</div>
 </div>
 
-<div class="card">
-<img src="img/cookies.jpg">
-<h3>Cookies</h3>
-<p>Isi 10 pcs</p>
-<div class="price">Rp25.000</div>
-<button onclick="addToCart('Cookies',25000)">Tambah</button>
+<!-- CHECKOUT -->
+<div class="section" id="checkout">
+  <h2>Checkout</h2>
+
+  <label>Nama Pembeli</label>
+  <input type="text" id="nama" placeholder="Nama lengkap">
+
+  <label>Alamat Lengkap</label>
+  <textarea id="alamat" rows="3"
+    placeholder="Nama jalan, desa, kecamatan, kabupaten"></textarea>
+
+  <label>Catatan (opsional)</label>
+  <textarea id="catatan" rows="2"
+  placeholder="contohnya diantar nanti sore "></textarea>
+
+  <hr>
+
+  <div id="cartList">Keranjang kosong</div>
+  <h3>Total: Rp<span id="total">0</span></h3>
+
+  <button class="btn" onclick="checkoutWA()">Checkout WhatsApp</button>
 </div>
 
+<!-- TESTIMONI -->
+<div class="section" id="testimoni">
+  <h2>Testimoni Pelanggan</h2>
+  <div class="testimoni">
+    <div class="testi-card">⭐⭐⭐⭐⭐<br>"Rasanya jangan diragukan lagi"<br><b>— gina Siregar</b></div>
+    <div class="testi-card">⭐⭐⭐⭐⭐<br>"Pelayanan cepat"<br><b>— Agus Sembiring</b></div>
+    <div class="testi-card">⭐⭐⭐⭐⭐<br>"Kue customnya cakep"<br><b>— Rika alfira sihotang</b></div>
+    <div class="testi-card">⭐⭐⭐⭐⭐<br>"Bolunya fluffy banget"<br><b>— testi pani </b></div>
+  </div>
 </div>
 
-<div class="cart">
-<b>Keranjang</b>
-<div id="cartList"></div>
-<p id="totalItem">0 item</p>
-<p id="totalPrice">Total: Rp0</p>
-<button class="submit" onclick="checkout()">Checkout</button>
-<button onclick="clearCart()">Kosongkan</button>
+<!-- ALAMAT TOKO -->
+<div class="section" id="alamat-toko">
+  <h2>Alamat Toko</h2>
+  <p>📍 <b>Lilicia Bakehouse</b><br>
+     Jalan Jamin Ginting KM 22.5,<br>
+     Bintang Meriah, Sumatera Utara
+  </p>
+  <p>🕘 <b>Jam Operasional:</b><br>
+     Senin – Minggu | 08.00 – 19.00 WIB
+  </p>
+  <p>📞 <b>Kontak:</b><br>
+     0813-6817-8228
+  </p>
 </div>
-
-<section id="checkout">
-<h2>Checkout</h2>
-
-<form onsubmit="event.preventDefault();sendWA();">
-
-<input id="buyer" placeholder="Nama Pembeli" required>
-<input id="phone" placeholder="Nomor WhatsApp Pembeli" required>
-<textarea id="address" placeholder="Alamat Pembeli" required></textarea>
-
-<select id="payment" required>
-<option value="">-- Metode Pembayaran --</option>
-<option>Transfer Bank</option>
-<option>E-Wallet</option>
-<option>COD</option>
-</select>
-
-<p><b>Ongkir:</b> Rp10.000</p>
-
-<textarea id="summary" readonly placeholder="Ringkasan Pesanan"></textarea>
-
-<button class="submit">Kirim Pesanan via WhatsApp</button>
-
-</form>
-</section>
 
 </div>
 
 <footer>
-📍 Jl. Jamin Ginting Km 22.5, Bintang Meriah<br>
-📞 0813-6817-8228<br>
 © 2025 Lilicia Bakehouse
 </footer>
 
 <script>
-const ONGKIR_TETAP = 10000;
-let cart=[];
+let cart = [];
+let total = 0;
 
-function addToCart(name,price){
- let item=cart.find(i=>i.name===name);
- if(item){item.qty++}else{cart.push({name,price,qty:1})}
- renderCart();
+function addCart(n, h){
+  cart.push({n, h});
+  total += h;
+  renderCart();
 }
 
 function renderCart(){
- let list=document.getElementById('cartList');
- let totalItem=0,total=0;
- list.innerHTML='';
- cart.forEach(i=>{
-  totalItem+=i.qty;
-  total+=i.qty*i.price;
-  list.innerHTML+=
-   `<div class="cart-item">
-     <span>${i.name} x${i.qty}</span>
-     <span>Rp${(i.qty*i.price).toLocaleString()}</span>
-    </div>`;
- });
- document.getElementById('totalItem').innerText=totalItem+' item';
- document.getElementById('totalPrice').innerText='Total: Rp'+total.toLocaleString();
+  let html = "";
+  cart.forEach(c => {
+    html += `• ${c.n} - Rp${c.h}<br>`;
+  });
+  document.getElementById("cartList").innerHTML =
+    html || "Keranjang kosong";
+  document.getElementById("total").innerText = total;
 }
 
-function clearCart(){
- cart=[];
- renderCart();
- document.getElementById('summary').value='';
-}
+function checkoutWA(){
+  const nama = document.getElementById("nama").value.trim();
+  const alamat = document.getElementById("alamat").value.trim();
+  const catatan = document.getElementById("catatan").value.trim();
 
-function checkout(){
- if(cart.length===0){alert('Keranjang kosong');return;}
- let text='',subtotal=0;
- cart.forEach(i=>{
-  text+=`- ${i.name} x${i.qty} = Rp${(i.qty*i.price).toLocaleString()}\n`;
-  subtotal+=i.qty*i.price;
- });
- let totalBayar = subtotal + ONGKIR_TETAP;
- summary.value =
-  text +
-  `\nSubtotal: Rp${subtotal.toLocaleString()}` +
-  `\nOngkir: Rp${ONGKIR_TETAP.toLocaleString()}` +
-  `\nTOTAL BAYAR: Rp${totalBayar.toLocaleString()}`;
- document.getElementById('checkout').scrollIntoView({behavior:'smooth'});
-}
+  if(!nama || !alamat || cart.length === 0){
+    alert("Nama, alamat, dan pesanan wajib diisi");
+    return;
+  }
 
-function sendWA(){
- let pesan=
-`PESANAN BARU
+  let pesan =
+    `Pesanan Lilicia Bakehouse:\n` +
+    `Nama: ${nama}\n` +
+    `Alamat: ${alamat}\n` +
+    `Catatan: ${catatan}\n\n`;
 
-Nama: ${buyer.value}
-WA: ${phone.value}
-Alamat: ${address.value}
+  cart.forEach(c => {
+    pesan += `- ${c.n} (Rp${c.h})\n`;
+  });
 
-Pembayaran: ${payment.value}
+  pesan += `Total: Rp${total}`;
 
-${summary.value}`;
-
- window.open(
-  "https://wa.me/6281368178228?text="+encodeURIComponent(pesan)
- );
-
- clearCart();
- document.querySelector('form').reset();
+  window.open(
+    "https://wa.me/6281368178228?text=" +
+    encodeURIComponent(pesan)
+  );
 }
 </script>
 
